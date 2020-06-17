@@ -10,4 +10,4 @@ install:
     - pip install flake8
     
 script:
-    - flake8 wmfconfigreader.py --ignore E402,F401,W503,E722
+    - flake8 wmfconfigreader.py --ignore E402,F401,W503,E722 --max-line-length=150
