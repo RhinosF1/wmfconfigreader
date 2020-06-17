@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.6" # Until 2021-12-23 at latest
+  - "3.7" # supported until  2023-06-27 at latest
+  - "3.8" # latest python version
+dist: xenial
+os: linux
+
+install:
+    - pip install flake8
+    
+script:
+    # we ignore E402 because of workarounds we use for modules loading, and F401 because some imports aren't directly used but needed for modules and travis doesn't like that
+    - flake8 wmfconfigreader.py --ignore E402,F401,W503,E722
